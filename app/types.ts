@@ -1,0 +1,3 @@
+interface ContextType {
+    auth?: string
+}
