@@ -36,7 +36,11 @@ scalar DateTime
 
 """A podcast episode"""
 type Episode {
+  duration: Int!
+  link: String!
+  previewUrl: String
   show: String!
+  title: String!
 }
 
 union EpisodeOrTrack = Episode | Track

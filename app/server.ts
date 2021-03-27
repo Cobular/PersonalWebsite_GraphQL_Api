@@ -10,7 +10,7 @@ import responseCachePlugin from "apollo-server-plugin-response-cache";
 import { ActivityResolver } from "./resolvers/Activity"
 import { NowPlayingResolver } from "./resolvers/NowPlaying"
 
-const main = async () => {
+async function main() {
   const schema = await buildSchema({
     resolvers: [ActivityResolver, NowPlayingResolver],
     emitSchemaFile: true,
@@ -26,8 +26,8 @@ const main = async () => {
       }
       return ctx
     },
-    plugins: [ responseCachePlugin() ],
-    cacheControl: true
+    plugins: [responseCachePlugin()],
+    cacheControl: true,
   })
   const app = Express()
   server.applyMiddleware({ app })
@@ -37,6 +37,7 @@ const main = async () => {
     ),
   )
 }
-main().catch((error) => {
+
+main().catch(error => {
   console.log(error, "error")
 })

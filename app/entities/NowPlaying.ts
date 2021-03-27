@@ -31,6 +31,7 @@ export class Media {
 export class Episode extends Media {
   @Field()
   show: string
+  type: "episode"
 }
 
 @ObjectType()
@@ -55,6 +56,7 @@ export class Track extends Media {
 
   @Field(_type => Album)
   album: Album
+  type: "track"
 }
 
 const EpisodeOrTrack = createUnionType({

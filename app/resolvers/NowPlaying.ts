@@ -66,7 +66,8 @@ export class NowPlayingResolver {
             artists: PlaybackInfo.item.album.artists.map(this.mapArtist),
             link: PlaybackInfo.item.album.external_urls.spotify,
             imageUrl: PlaybackInfo.item.album.images[0].url
-          }
+          },
+          type: "track"
         }
       }
 
@@ -76,7 +77,8 @@ export class NowPlayingResolver {
           duration: PlaybackInfo.item.duration_ms,
           link: PlaybackInfo.item.external_urls.spotify,
           previewUrl: PlaybackInfo.item.audio_preview_url || undefined,
-          show: PlaybackInfo.item.show.name
+          show: PlaybackInfo.item.show.name,
+          type: "episode"
         }
       }
 
