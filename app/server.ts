@@ -28,6 +28,10 @@ async function main() {
     },
     plugins: [responseCachePlugin()],
     cacheControl: true,
+    playground: {
+      // @ts-ignore
+      shareEnabled: true,
+    }
   })
   const app = Express()
   server.applyMiddleware({ app })
